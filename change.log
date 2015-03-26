@@ -1,0 +1,65 @@
+version 1.4.1(lamp/lnmp)(2014-11-10更新):
+1、修复ubuntu系统ftp登录出错bug。
+2、修复ubuntu14.04系统，mysql密码出错bug。
+3、修复除centos、ubuntu系统外，www用户创建失败bug。
+
+version 1.4.0(lamp/lnmp)(2014-10-28更新):
+1、Ngnix低版本存在安全问题，只保留1.4.4版本。
+2、Apache2.2系列升级至2.2.29,2.4系列升级至2.4.10。
+3、Mysql5.5系列升级至5.5.40,5.6系列升级至5.6.21。
+4、Php5.3系列升级至5.3.29。
+5、修复centos5.10版本下，gpgkeys未自动导入bug。
+6、ubuntu 下 /usr/sbin/nologin 的bug。
+7、mysql的error日志路径bug。
+
+version 1.3.3(lamp/lnmp)(2014-04-14更新):
+1、修复redhat系列下，sed导致软链接失效的bug。
+
+version 1.3.2(lamp/lnmp)(2014-04-07更新):
+1、安装前清空系统曾安装过的nginx、apache、php、mysql。
+   修复ubuntu apt-get安装mysql后，导致一键安装包mysql启动异常。
+2、添加ext4格式化磁盘。格式化第一块盘的时候，如果存在ext4文件系统则格式化为ext4，否则格式化为ext3。
+   注：ext4一般存在于ubuntu、debian系统中。
+
+version 1.3.1(lamp/lnmp)(2014-03-14更新):
+1、修改ubuntu重启后，无法自启动一键安装包的服务的问题。
+
+version 1.3.0(lamp/lnmp)(2014-03-14更新):
+1、增加清理安装环境的功能。
+2、修复脚本，去除nginx/apache/mysql/php等软件中的全局变量，使其单独执行安装脚本也能成功安装。
+
+version 1.2.2(lamp/lnmp)(2014-03-13更新):
+1、修改512M内存的系统安装，php编译内存不足的bug。
+2、修改用户自己格式化磁盘后，脚本判断异常的bug。
+3、加入简单的安装验证。
+
+version 1.2.1(lamp/lnmp)(2014-03-07更新):
+1、修改安装时，找不到包的error提示。
+2、修改php安装，CPU_NUM参数找不到的bug。
+
+version 1.2.0(lamp/lnmp)(2014-02-25更新):
+1、加入版本控制功能，区分安装包的版本。在change.log有版本更新说明。
+2、将phpMyAdmin版本从3.5.2.2升级到4.1.8。
+3、代码优化，加入简单注释，去除冗余代码，修复判断错误问题等等。
+4、增加安装日志/alidata/website-info.log，日志中显示安装的软件版本情况。
+5、去除echo "/etc/init.d/iptables stop" >> /etc/rc.local 改为 iptabls -F。
+6、增加两个内核参数：
+    net.ipv4.tcp_syncookies = 1
+    kernel.hung_task_timeout_secs = 0
+7、nginx、apache加入到/etc/init.d/中启动。
+
+
+version 1.1.0 (2014-01-03更新):
+1、使用手册和实际操作的场景对应关系已修正完善。
+2、对于用户新建服务器到服务器创建ftp并将安装包上传，此部分内容我已在帮助文档中加入了详细的安装指导和说明。
+3、对于应用类型和版本的选择，此部分去除了config配置文件，改为在shell也没输入数字的方式进行选择。
+
+version 1.0.0 (2013-12-26更新):
+1、新增nginx、apache、mysql、php版本的选择。
+2、删除老的安装包中nginx 1.0.4版本、php 5.2.17版本。
+3、重构、重写老版本安装包的代码，方便后期扩展、以及用户阅读源码。
+4、优化apache、nginx、mysql、php的配置文件。
+5、解决老版本、新版本中大量安装bug。
+
+如果有什么使用问题、bug，或者建议，可联系作者：qrj@jiagouyun.com
+
